@@ -10,8 +10,8 @@ namespace MixedMinesweeper.Model
         private int XCoordinate = -1;
         private int YCoordinate = -1;
 
-        private FieldColors _Color = FieldColors.NoColor;
-        public FieldColors Color
+        private MinesColors _Color = MinesColors.NoColor;
+        public MinesColors Color
         {
             get { return _Color; }
         }
@@ -46,7 +46,7 @@ namespace MixedMinesweeper.Model
         }
 
         
-        public Field( int xCoordinate, int yCoordinate, FieldColors mineColor = FieldColors.NoColor)
+        public Field( int xCoordinate, int yCoordinate, MinesColors mineColor = MinesColors.NoColor)
         {
             if (xCoordinate < 0)
             {
@@ -56,7 +56,7 @@ namespace MixedMinesweeper.Model
             {
                 throw new ArgumentException("Coordinate must be >= 0", "<yCoordinate");
             }
-            if (mineColor != FieldColors.NoColor)
+            if (mineColor != MinesColors.NoColor)
             {
                 this._IsMine = true;
             }
@@ -65,7 +65,7 @@ namespace MixedMinesweeper.Model
             this.YCoordinate = yCoordinate;
         }
 
-        public int GetColoredMines(FieldColors color)
+        public int GetColoredMines(MinesColors color)
         {
             int mines = 0;
             foreach (Field field in this.NeighbouringFields)

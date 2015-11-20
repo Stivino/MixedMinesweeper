@@ -8,8 +8,8 @@ namespace MixedMinesweeper.Model
 {
     public class MineField
     {
-        private Dictionary<FieldColors, int> _MineColoring = new Dictionary<FieldColors, int>();
-        public Dictionary<FieldColors, int> MineColoring
+        private Dictionary<MinesColors, int> _MineColoring = new Dictionary<MinesColors, int>();
+        public Dictionary<MinesColors, int> MineColoring
         {
             get { return _MineColoring; }
         }
@@ -32,7 +32,7 @@ namespace MixedMinesweeper.Model
             get { return _MinesCount; }
         }
 
-        public MineField(int xLength, int yLength, Dictionary<FieldColors, int> mineColoring)
+        public MineField(int xLength, int yLength, Dictionary<MinesColors, int> mineColoring)
         {
             int numOfFields = xLength * yLength;
             int numOfMines = 0;
@@ -67,7 +67,7 @@ namespace MixedMinesweeper.Model
         private void CreateMineField()
         {
             // Create random Mines in the minefield
-            foreach (KeyValuePair<FieldColors, int> coloring in this.MineColoring)
+            foreach (KeyValuePair<MinesColors, int> coloring in this.MineColoring)
             {
                 CreateColoredMines(coloring);
             }
@@ -132,7 +132,7 @@ namespace MixedMinesweeper.Model
             }
         }
 
-        private void CreateColoredMines(KeyValuePair<FieldColors, int> coloring)
+        private void CreateColoredMines(KeyValuePair<MinesColors, int> coloring)
         {
             int mines = 0;
             while (mines < coloring.Value)

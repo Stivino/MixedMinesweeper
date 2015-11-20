@@ -5,8 +5,8 @@ using System.Text;
 
 namespace MixedMinesweeper.Model
 {
-    public enum FieldColors
+    public enum MinesColors
     {
-        NoColor, Black, Red, Green, Blue
+        NoColor, Red, Green, Blue, Yellow
     }
 }
