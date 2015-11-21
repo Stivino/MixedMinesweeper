@@ -31,38 +31,37 @@
             this.btnStartGame = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxMines = new System.Windows.Forms.GroupBox();
-            this.lblError = new System.Windows.Forms.Label();
             this.numericUpDown_GreenMines = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown_YellowMines = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.numericUpDown_BlueMines = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown_RedMines = new System.Windows.Forms.NumericUpDown();
-            this.lblBlueMines = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.lblRedMines = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblBlueMines = new System.Windows.Forms.Label();
+            this.numericUpDown_RedMines = new System.Windows.Forms.NumericUpDown();
+            this.lblError = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown_FieldWidth = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown_FieldHeight = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDown_FieldHeight = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_FieldWidth = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton_Beginner = new System.Windows.Forms.RadioButton();
-            this.radioButton_Intermediate = new System.Windows.Forms.RadioButton();
             this.radioButton_Expert = new System.Windows.Forms.RadioButton();
+            this.radioButton_Intermediate = new System.Windows.Forms.RadioButton();
+            this.radioButton_Beginner = new System.Windows.Forms.RadioButton();
             this.groupBoxMines.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GreenMines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_YellowMines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_BlueMines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_RedMines)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FieldWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FieldHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FieldWidth)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStartGame
             // 
-            this.btnStartGame.Enabled = false;
             this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStartGame.Location = new System.Drawing.Point(283, 403);
             this.btnStartGame.Name = "btnStartGame";
@@ -101,16 +100,6 @@
             this.groupBoxMines.TabStop = false;
             this.groupBoxMines.Text = "Anzahl Minen";
             // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(9, 414);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 15);
-            this.lblError.TabIndex = 26;
-            // 
             // numericUpDown_GreenMines
             // 
             this.numericUpDown_GreenMines.BackColor = System.Drawing.Color.YellowGreen;
@@ -119,6 +108,7 @@
             this.numericUpDown_GreenMines.Name = "numericUpDown_GreenMines";
             this.numericUpDown_GreenMines.Size = new System.Drawing.Size(75, 24);
             this.numericUpDown_GreenMines.TabIndex = 25;
+            this.numericUpDown_GreenMines.Visible = false;
             this.numericUpDown_GreenMines.ValueChanged += new System.EventHandler(this.numericUpDown_Mines_ValueChanged);
             // 
             // numericUpDown_YellowMines
@@ -129,27 +119,8 @@
             this.numericUpDown_YellowMines.Name = "numericUpDown_YellowMines";
             this.numericUpDown_YellowMines.Size = new System.Drawing.Size(75, 24);
             this.numericUpDown_YellowMines.TabIndex = 24;
+            this.numericUpDown_YellowMines.Visible = false;
             this.numericUpDown_YellowMines.ValueChanged += new System.EventHandler(this.numericUpDown_Mines_ValueChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(52, 124);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 18);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Grüne Minen";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(52, 94);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 18);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Gelbe Minen";
             // 
             // numericUpDown_BlueMines
             // 
@@ -160,6 +131,48 @@
             this.numericUpDown_BlueMines.Size = new System.Drawing.Size(75, 24);
             this.numericUpDown_BlueMines.TabIndex = 21;
             this.numericUpDown_BlueMines.ValueChanged += new System.EventHandler(this.numericUpDown_Mines_ValueChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(52, 124);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 18);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Grüne Minen";
+            this.label8.Visible = false;
+            // 
+            // lblRedMines
+            // 
+            this.lblRedMines.AutoSize = true;
+            this.lblRedMines.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedMines.Location = new System.Drawing.Point(51, 34);
+            this.lblRedMines.Name = "lblRedMines";
+            this.lblRedMines.Size = new System.Drawing.Size(84, 18);
+            this.lblRedMines.TabIndex = 18;
+            this.lblRedMines.Text = "Rote Minen";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(52, 94);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 18);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Gelbe Minen";
+            this.label7.Visible = false;
+            // 
+            // lblBlueMines
+            // 
+            this.lblBlueMines.AutoSize = true;
+            this.lblBlueMines.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBlueMines.Location = new System.Drawing.Point(52, 64);
+            this.lblBlueMines.Name = "lblBlueMines";
+            this.lblBlueMines.Size = new System.Drawing.Size(89, 18);
+            this.lblBlueMines.TabIndex = 19;
+            this.lblBlueMines.Text = "Blaue Minen";
             // 
             // numericUpDown_RedMines
             // 
@@ -176,25 +189,15 @@
             0});
             this.numericUpDown_RedMines.ValueChanged += new System.EventHandler(this.numericUpDown_Mines_ValueChanged);
             // 
-            // lblBlueMines
+            // lblError
             // 
-            this.lblBlueMines.AutoSize = true;
-            this.lblBlueMines.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBlueMines.Location = new System.Drawing.Point(52, 64);
-            this.lblBlueMines.Name = "lblBlueMines";
-            this.lblBlueMines.Size = new System.Drawing.Size(89, 18);
-            this.lblBlueMines.TabIndex = 19;
-            this.lblBlueMines.Text = "Blaue Minen";
-            // 
-            // lblRedMines
-            // 
-            this.lblRedMines.AutoSize = true;
-            this.lblRedMines.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedMines.Location = new System.Drawing.Point(51, 34);
-            this.lblRedMines.Name = "lblRedMines";
-            this.lblRedMines.Size = new System.Drawing.Size(84, 18);
-            this.lblRedMines.TabIndex = 18;
-            this.lblRedMines.Text = "Rote Minen";
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(9, 414);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 15);
+            this.lblError.TabIndex = 26;
             // 
             // groupBox1
             // 
@@ -210,23 +213,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Spielfeldgröße";
             // 
-            // numericUpDown_FieldWidth
+            // label3
             // 
-            this.numericUpDown_FieldWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown_FieldWidth.Location = new System.Drawing.Point(94, 30);
-            this.numericUpDown_FieldWidth.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericUpDown_FieldWidth.Name = "numericUpDown_FieldWidth";
-            this.numericUpDown_FieldWidth.Size = new System.Drawing.Size(74, 24);
-            this.numericUpDown_FieldWidth.TabIndex = 11;
-            this.numericUpDown_FieldWidth.Value = new decimal(new int[] {
-            9,
-            0,
-            0,
-            0});
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(214, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 18);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Höhe";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 18);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Länge";
             // 
             // numericUpDown_FieldHeight
             // 
@@ -246,25 +251,23 @@
             0,
             0});
             // 
-            // label2
+            // numericUpDown_FieldWidth
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 18);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Länge";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(214, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 18);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Höhe";
+            this.numericUpDown_FieldWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown_FieldWidth.Location = new System.Drawing.Point(94, 30);
+            this.numericUpDown_FieldWidth.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericUpDown_FieldWidth.Name = "numericUpDown_FieldWidth";
+            this.numericUpDown_FieldWidth.Size = new System.Drawing.Size(74, 24);
+            this.numericUpDown_FieldWidth.TabIndex = 11;
+            this.numericUpDown_FieldWidth.Value = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
             // 
             // groupBox2
             // 
@@ -279,18 +282,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Voreinstellung";
             // 
-            // radioButton_Beginner
+            // radioButton_Expert
             // 
-            this.radioButton_Beginner.AutoSize = true;
-            this.radioButton_Beginner.Checked = true;
-            this.radioButton_Beginner.Location = new System.Drawing.Point(6, 23);
-            this.radioButton_Beginner.Name = "radioButton_Beginner";
-            this.radioButton_Beginner.Size = new System.Drawing.Size(84, 22);
-            this.radioButton_Beginner.TabIndex = 0;
-            this.radioButton_Beginner.TabStop = true;
-            this.radioButton_Beginner.Text = "Anfänger";
-            this.radioButton_Beginner.UseVisualStyleBackColor = true;
-            this.radioButton_Beginner.CheckedChanged += new System.EventHandler(this.radioButton_Beginner_CheckedChanged);
+            this.radioButton_Expert.AutoSize = true;
+            this.radioButton_Expert.Location = new System.Drawing.Point(284, 23);
+            this.radioButton_Expert.Name = "radioButton_Expert";
+            this.radioButton_Expert.Size = new System.Drawing.Size(57, 22);
+            this.radioButton_Expert.TabIndex = 2;
+            this.radioButton_Expert.Text = "Profi";
+            this.radioButton_Expert.UseVisualStyleBackColor = true;
+            this.radioButton_Expert.CheckedChanged += new System.EventHandler(this.radioButton_Expert_CheckedChanged);
             // 
             // radioButton_Intermediate
             // 
@@ -303,16 +304,18 @@
             this.radioButton_Intermediate.UseVisualStyleBackColor = true;
             this.radioButton_Intermediate.CheckedChanged += new System.EventHandler(this.radioButton_Intermediate_CheckedChanged);
             // 
-            // radioButton_Expert
+            // radioButton_Beginner
             // 
-            this.radioButton_Expert.AutoSize = true;
-            this.radioButton_Expert.Location = new System.Drawing.Point(284, 23);
-            this.radioButton_Expert.Name = "radioButton_Expert";
-            this.radioButton_Expert.Size = new System.Drawing.Size(57, 22);
-            this.radioButton_Expert.TabIndex = 2;
-            this.radioButton_Expert.Text = "Profi";
-            this.radioButton_Expert.UseVisualStyleBackColor = true;
-            this.radioButton_Expert.CheckedChanged += new System.EventHandler(this.radioButton_Expert_CheckedChanged);
+            this.radioButton_Beginner.AutoSize = true;
+            this.radioButton_Beginner.Checked = true;
+            this.radioButton_Beginner.Location = new System.Drawing.Point(6, 23);
+            this.radioButton_Beginner.Name = "radioButton_Beginner";
+            this.radioButton_Beginner.Size = new System.Drawing.Size(84, 22);
+            this.radioButton_Beginner.TabIndex = 0;
+            this.radioButton_Beginner.TabStop = true;
+            this.radioButton_Beginner.Text = "Anfänger";
+            this.radioButton_Beginner.UseVisualStyleBackColor = true;
+            this.radioButton_Beginner.CheckedChanged += new System.EventHandler(this.radioButton_Beginner_CheckedChanged);
             // 
             // FormNewGameSettings
             // 
@@ -332,7 +335,6 @@
             this.Name = "FormNewGameSettings";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "FormNewGameSettings";
-            this.Load += new System.EventHandler(this.FormNewGameSettings_Load);
             this.groupBoxMines.ResumeLayout(false);
             this.groupBoxMines.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GreenMines)).EndInit();
@@ -341,8 +343,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_RedMines)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FieldWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FieldHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FieldWidth)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

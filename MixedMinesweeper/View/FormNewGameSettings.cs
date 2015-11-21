@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MixedMinesweeper.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,14 +17,23 @@ namespace MixedMinesweeper.View
             InitializeComponent();
         }
 
-        private void FormNewGameSettings_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnStartGame_Click(object sender, EventArgs e)
         {
-            FormMineField field = new FormMineField();
+            int width = (int)this.numericUpDown_FieldWidth.Value;
+            int heigth = (int)this.numericUpDown_FieldHeight.Value;
+            int redMines = (int)this.numericUpDown_RedMines.Value;
+            int blueMines = (int)this.numericUpDown_BlueMines.Value;
+            int yellowMines = (int)this.numericUpDown_YellowMines.Value;
+            int greenMines = (int)this.numericUpDown_GreenMines.Value;
+
+            Dictionary<MinesColors,int> coloring = new Dictionary<MinesColors,int>();
+            coloring.Add(MinesColors.Red,redMines);
+            coloring.Add(MinesColors.Blue,blueMines);
+            coloring.Add(MinesColors.Yellow, yellowMines);
+            coloring.Add(MinesColors.Green,greenMines);
+
+            MineField mineField = new MineField(width, heigth, coloring);
+            FormMineField field = new FormMineField(mineField);
             field.Show();
         }
 
