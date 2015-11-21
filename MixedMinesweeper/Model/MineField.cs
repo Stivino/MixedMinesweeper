@@ -53,10 +53,6 @@ namespace MixedMinesweeper.Model
             {
                 throw new ArgumentException("Number of mines must be smaller than number of fields!", "numOfMines");
             }
-            //if (this.IsPrimeNumber(numOfFields))
-            //{
-            //    throw new ArgumentException("Number of fields must not be a prime number!", "numOfFields");
-            //}
             this._MineColoring = mineColoring;
             this._FieldsCount = numOfFields;
             this._MinesCount = numOfMines;
@@ -148,27 +144,5 @@ namespace MixedMinesweeper.Model
                 }
             }
         }
-
-
-        //    private bool IsPrimeNumber(int number)
-        //    {
-        //        if (number % 2 == 0)
-        //        {
-        //            return false;
-        //        }
-        //        if (number % 3 == 0)
-        //        {
-        //            return false;
-        //        }
-        //        int divisor = number / 2;
-        //        for (int i = divisor; i > 0; i--)
-        //        {
-        //            if (number % i == 0)
-        //            {
-        //                return false;
-        //            }
-        //        }
-        //        return true;
-        //    }
     }
 }
