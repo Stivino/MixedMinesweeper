@@ -45,6 +45,7 @@ namespace MixedMinesweeper.Model
             get { return _IsMine; }
         }
 
+
         
         public Field( int xCoordinate, int yCoordinate, MinesColors mineColor = MinesColors.NoColor)
         {
