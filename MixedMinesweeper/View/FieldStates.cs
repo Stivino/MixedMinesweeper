@@ -7,12 +7,11 @@ namespace MixedMinesweeper.View
 {
     public enum FieldStates : int
     {
-        Covered = 0,
+        Default = 0,
         RedFlag = 1,
         BlueFlag = 2,
         GreenFlag = 3,
         YellowFlag = 4,
         QuestioMark = 5,
-        Uncoverd = 6
     }
 }
