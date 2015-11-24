@@ -5,24 +5,36 @@ using System.Text;
 
 namespace MixedMinesweeper.Model
 {
+    /// <summary>
+    /// Die Klasse repräsentiert ein Feld im Minenfeld. Ein Feld kann auch eine Mine sein, sofern eine Farbe zugewiesen wird.
+    /// </summary>
     public class Field
     {
-        private int XCoordinate = -1;
-        private int YCoordinate = -1;
+        private int _XCoordinate = -1;
+        private int _YCoordinate = -1;
 
         private MinesColors _Color = MinesColors.NoColor;
+        /// <summary>
+        /// Gibt im Falle einer Mine die dazugehörige Farbe an.
+        /// </summary>
         public MinesColors Color
         {
             get { return _Color; }
         }
 
         private int _NeighbouringMines = 0;
+        /// <summary>
+        /// Gibt die Anzahl der benachbarten Minen an.
+        /// </summary>
         public int NeighbouringMines
         {
             get { return _NeighbouringMines; }
         }
 
         private List<Field> _NeighbouringFields = new List<Field>();
+        /// <summary>
+        /// Gibt die benachbarten Felder inklusive der Minen zurück.
+        /// </summary>
         public List<Field> NeighbouringFields
         {
             get { return _NeighbouringFields; }
@@ -40,13 +52,21 @@ namespace MixedMinesweeper.Model
         }
 
         private bool _IsMine = false;
+        /// <summary>
+        /// Gibt an, ob das Feld eine Mine ist.
+        /// </summary>
         public bool IsMine
         {
             get { return _IsMine; }
         }
 
 
-        
+        /// <summary>
+        /// Konstruktor.
+        /// </summary>
+        /// <param name="xCoordinate">X-Koordinate im Feld</param>
+        /// <param name="yCoordinate">Y-Koordinate im Feld</param>
+        /// <param name="mineColor">Optional: Bestimmt, ob das Feld eine Mine ist und gibt die Farbe an.</param>
         public Field( int xCoordinate, int yCoordinate, MinesColors mineColor = MinesColors.NoColor)
         {
             if (xCoordinate < 0)
@@ -62,10 +82,15 @@ namespace MixedMinesweeper.Model
                 this._IsMine = true;
             }
             this._Color = mineColor;
-            this.XCoordinate = xCoordinate;
-            this.YCoordinate = yCoordinate;
+            this._XCoordinate = xCoordinate;
+            this._YCoordinate = yCoordinate;
         }
 
+        /// <summary>
+        /// Gibt die Anzahl der benachbarten Minen einer Farbe an.
+        /// </summary>
+        /// <param name="color">Gibt die zu suchende Farbe an.</param>
+        /// <returns>Anzahl der gefundenen Minen.</returns>
         public int GetColoredMines(MinesColors color)
         {
             int mines = 0;
@@ -79,6 +104,10 @@ namespace MixedMinesweeper.Model
             return mines;
         }
 
+        /// <summary>
+        /// Überschreibt die ToString Methode.
+        /// </summary>
+        /// <returns>String, der Informationen über die Instanz enthält.</returns>
         public override string ToString()
         {
             StringBuilder bs = new StringBuilder();
