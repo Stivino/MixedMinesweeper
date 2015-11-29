@@ -179,13 +179,14 @@ namespace MixedMinesweeper.View
         /// </summary>
         private void IncrementFieldState()
         {
+            string flagging = "flag_";
             if (!this.Checked)
             {
                 this._FieldState = ((int)this._FieldState == Enum.GetValues(typeof(FieldStates)).Length - 1) ? 0 : ++this._FieldState;
                 switch (this._FieldState)
                 {
                     case FieldStates.RedFlag:
-                        this.Text = "R";
+                        flagging += "red";
                         break;
                     case FieldStates.BlueFlag:
                         if (!this._BlueEnabled)
@@ -194,7 +195,7 @@ namespace MixedMinesweeper.View
                         }
                         else
                         {
-                            this.Text = "B";
+                            flagging += "blue";
                         }
                         break;
                     case FieldStates.GreenFlag:
@@ -204,7 +205,7 @@ namespace MixedMinesweeper.View
                         }
                         else
                         {
-                            this.Text = "G";
+                            flagging += "green";
                         }
                         break;
                     case FieldStates.YellowFlag:
@@ -214,7 +215,7 @@ namespace MixedMinesweeper.View
                         }
                         else
                         {
-                            this.Text = "Y";
+                            flagging += "yellow";
                         }
                         break;
                     case FieldStates.QuestioMark:
@@ -224,6 +225,19 @@ namespace MixedMinesweeper.View
                         this.Text = "";
                         break;
                 }
+                if (flagging != "flag_")
+                {
+                    System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetExecutingAssembly();
+                    System.IO.Stream myStream = myAssembly.GetManifestResourceStream("MixedMinesweeper.Images." + flagging + ".png");
+                    Bitmap image = new Bitmap(myStream);
+                    base.BackgroundImage = image;
+                    base.BackgroundImageLayout = ImageLayout.Stretch;
+                }
+                else
+                {
+                    this.BackgroundImage = null;
+                }
+                
             }
 
         }
