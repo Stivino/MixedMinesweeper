@@ -11,7 +11,16 @@ namespace MixedMinesweeper.Model
     public class Field
     {
         private int _XCoordinate = -1;
+        public int XCoordinate
+        {
+            get { return _XCoordinate; }
+        }
+        
         private int _YCoordinate = -1;
+        public int YCoordinate
+        {
+            get { return _YCoordinate; }
+        }
 
         private MinesColors _Color = MinesColors.NoColor;
         /// <summary>

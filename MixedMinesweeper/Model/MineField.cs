@@ -130,18 +130,40 @@ namespace MixedMinesweeper.Model
 
         private void CreateColoredMines(KeyValuePair<MinesColors, int> coloring)
         {
+            /*
+             * Zufallsverfahren geändert. So wie jetzt gibt es keine Mismatches mehr bei der Platzvergabe,
+             * da nur unter den vorhandenen, freien Feldern ausgelost wird.
+             * */
             int mines = 0;
+            for (int x = 0; x < this._Fields.GetLength(0); x++)
+            {
+                for (int y = 0; y < this._Fields.GetLength(1); y++)
+                {
+                    if (this._Fields[x, y] == null)
+                    {
+                        this._Fields[x, y] = new Field(x, y, MinesColors.NoColor);
+                    }
+                }
+            }
+
+            List<Field> tmpFields = new List<Field>();
+            foreach (Field field in this._Fields)
+            {
+                if (field != null && !field.IsMine)
+                {
+                    tmpFields.Add(field);
+                }
+            }
             while (mines < coloring.Value)
             {
                 Thread.Sleep(3);
                 Random rand = new Random(DateTime.Now.Millisecond);
-                int x = rand.Next(0, this._Fields.GetLength(0) - 1);
-                int y = rand.Next(0, this._Fields.GetLength(1) - 1);
-                if (this.Fields[x, y] == null || !this.Fields[x, y].IsMine)
-                {
-                    this.Fields[x, y] = new Field(x, y, coloring.Key);
-                    mines++;
-                }
+                int pos = rand.Next(0, tmpFields.Count - 1);
+                int x = tmpFields[pos].XCoordinate;
+                int y = tmpFields[pos].YCoordinate;
+                this.Fields[x, y] = new Field(x, y, coloring.Key);
+                tmpFields.RemoveAt(pos);
+                mines++;
             }
         }
     }
