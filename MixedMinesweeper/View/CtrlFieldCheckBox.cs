@@ -46,11 +46,17 @@ namespace MixedMinesweeper.View
             get { return _Field; }
         }
 
+
+        private bool _BlueEnabled;
+        private bool _GreenEnabled = false;
+        private bool _YellowEnabled = false;
+
+
         /// <summary>
         /// Konstruktor
         /// </summary>
         /// <param name="field">Gibt das zu repräsentierende Feld an.</param>
-        public CtrlFieldCheckBox(Field field)
+        public CtrlFieldCheckBox(Field field, bool blueEnabled, bool greenEnabled = false, bool yellowEnabled = false)
         {
             if (field == null)
             {
@@ -67,6 +73,9 @@ namespace MixedMinesweeper.View
             base.FlatAppearance.CheckedBackColor = Color.FromKnownColor(System.Drawing.KnownColor.Black);
             this._Field = field;
             base.MouseDown += CtrlFieldCheckBox_MouseDown;
+            this._BlueEnabled = blueEnabled;
+            this._GreenEnabled = greenEnabled;
+            this._YellowEnabled = yellowEnabled;
 
             this.LoadImage();
         }
@@ -179,13 +188,34 @@ namespace MixedMinesweeper.View
                         this.Text = "R";
                         break;
                     case FieldStates.BlueFlag:
-                        this.Text = "B";
+                        if (!this._BlueEnabled)
+                        {
+                            IncrementFieldState();
+                        }
+                        else
+                        {
+                            this.Text = "B";
+                        }
                         break;
                     case FieldStates.GreenFlag:
-                        this.Text = "G";
+                        if (!this._GreenEnabled)
+                        {
+                            IncrementFieldState();
+                        }
+                        else
+                        {
+                            this.Text = "G";
+                        }
                         break;
                     case FieldStates.YellowFlag:
-                        this.Text = "Y";
+                        if (!this._YellowEnabled)
+                        {
+                            IncrementFieldState();
+                        }
+                        else
+                        {
+                            this.Text = "Y";
+                        }
                         break;
                     case FieldStates.QuestioMark:
                         this.Text = "?";

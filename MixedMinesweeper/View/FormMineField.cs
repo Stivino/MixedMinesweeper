@@ -40,11 +40,15 @@ namespace MixedMinesweeper.View
             this.flowLayoutPanel_MineField.Width = width * 42;
             this.flowLayoutPanel_MineField.Height = heigth * 42;
 
+            bool blueEnabled = this._MineField.MineColoring[MinesColors.Blue] > 0;
+            bool greenEnabled = this._MineField.MineColoring[MinesColors.Green] > 0;
+            bool yellowEnabled = this._MineField.MineColoring[MinesColors.Yellow] > 0;
+
             for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < heigth; y++)
                 {
-                    fields[x, y] = new CtrlFieldCheckBox(this._MineField.Fields[x, y]);
+                    fields[x, y] = new CtrlFieldCheckBox(this._MineField.Fields[x, y],blueEnabled );
                     this.flowLayoutPanel_MineField.Controls.Add(fields[x, y]);
                 }
             }
