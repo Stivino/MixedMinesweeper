@@ -84,6 +84,7 @@
             // 
             // timePlayingTime
             // 
+            this.timePlayingTime.Enabled = true;
             this.timePlayingTime.Interval = 1000;
             this.timePlayingTime.Tick += new System.EventHandler(this.timePlayingTime_Tick);
             // 

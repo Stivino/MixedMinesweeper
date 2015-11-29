@@ -116,7 +116,7 @@ namespace MixedMinesweeper.View
         private void timePlayingTime_Tick(object sender, EventArgs e)
         {
             TimeSpan played = DateTime.Now - this._Time;
-            this.lblTime.Text = played.Minutes + ":" + played.Seconds;
+            this.lblTime.Text = played.Minutes.ToString().PadLeft(2, '0') + ":" + played.Seconds.ToString().PadLeft(2, '0');
         }
 
     }
