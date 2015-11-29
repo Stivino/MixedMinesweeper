@@ -24,18 +24,9 @@ namespace MixedMinesweeper.View
             get { return _FieldState; }
         }
 
-        private int _NeighbouringMines = 0;
-        /// <summary>
-        /// Gibt die Anzahl der angrenzenden Minen des unterliegenden Feldes zurück.
-        /// </summary>
-        public int NeighbouringMines
-        {
-            get { return _NeighbouringMines; }
-        }
-
         private List<CtrlFieldCheckBox> _NeighbouringFields = new List<CtrlFieldCheckBox>();
         /// <summary>
-        /// Gets oder sets the neighbouring fields as CtrlFieldCheckbox controls.
+        /// Gibt die benachbarten Felder als Controls zurück oder legt diese fest.
         /// </summary>
         public List<CtrlFieldCheckBox> NeighbouringFields
         {
@@ -43,15 +34,6 @@ namespace MixedMinesweeper.View
             set
             {
                 this._NeighbouringFields = value;
-                int tmpMines = 0;
-                foreach (CtrlFieldCheckBox field in NeighbouringFields)
-                {
-                    if (field.Field.IsMine)
-                    {
-                        tmpMines++;
-                    }
-                }
-                this._NeighbouringMines = tmpMines;
             }
         }
 
@@ -102,9 +84,9 @@ namespace MixedMinesweeper.View
                 this.Enabled = false;
                 if (!this.Checked)
                 {
-                    this.Text = this.NeighbouringMines.ToString();
+                    this.Text = this.Field.NeighbouringMines.ToString();
                     this.Checked = true;
-                    if (this.NeighbouringMines == 0)
+                    if (this.Field.NeighbouringMines == 0)
                     {
                         foreach (CtrlFieldCheckBox item in this.NeighbouringFields)
                         {
@@ -164,6 +146,7 @@ namespace MixedMinesweeper.View
                 {
                     // loser
                     this.Text = "*";
+                    this.SetBackgroundImage();
                 }
                 else
                 {
