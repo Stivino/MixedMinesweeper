@@ -139,9 +139,6 @@ namespace MixedMinesweeper.View
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                //this.Checked = true;
-                //this.Enabled = false;
-
                 if (this._Field.IsMine)
                 {
                     // loser
